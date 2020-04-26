@@ -11,11 +11,11 @@ fi
 if [ -z "${INPUT_ENABLE_WARNINGS}" ] || [ "${INPUT_ENABLE_WARNINGS}" = "false" ]; then
     echo "Check for warnings disabled"
 
-    /phpcs ${github.workspace} -n --report=checkstyle -d memory_limit=512M
+    /phpcs GITHUB_WORKSPACE -n --report=checkstyle -d memory_limit=512M
 else
     echo "Check for warnings enabled"
 
-    /phpcs ${github.workspace} --report=checkstyle -d memory_limit=512M
+    /phpcs GITHUB_WORKSPACE --report=checkstyle -d memory_limit=512M
 fi
 
 status=$?
