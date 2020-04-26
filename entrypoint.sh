@@ -11,11 +11,11 @@ fi
 if [ -z "${INPUT_ENABLE_WARNINGS}" ] || [ "${INPUT_ENABLE_WARNINGS}" = "false" ]; then
     echo "Check for warnings disabled"
 
-    /phpcs -n --report=checkstyle
+    /phpcs -n --report=checkstyle -d memory_limit=512M
 else
     echo "Check for warnings enabled"
 
-    /phpcs --report=checkstyle
+    /phpcs --report=checkstyle -d memory_limit=512M
 fi
 
 status=$?
