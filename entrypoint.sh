@@ -22,4 +22,4 @@ status=$?
 
 echo "::remove-matcher owner=phpcs::"
 
-exit $status
+exit 0
